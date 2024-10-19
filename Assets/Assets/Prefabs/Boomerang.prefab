@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2671364631276555953}
   - component: {fileID: 2671364631276555958}
+  - component: {fileID: 8172653554557398611}
   m_Layer: 0
   m_Name: Boomerang
   m_TagString: Untagged
@@ -85,6 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8172653554557398611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671364631276555956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4fb5c47a72db74f9a76c7a7738ed38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  player: {fileID: 0}
+  returnSpeed: 3
 --- !u!1 &7198923667972459398
 GameObject:
   m_ObjectHideFlags: 0
