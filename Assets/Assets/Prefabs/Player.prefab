@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5591506539951638133
@@ -317,6 +317,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 305275973772285720}
     m_Modifications:
+    - target: {fileID: 3763507813113226555, guid: 39a3eb4a0c226934db952cf3bbad82b6, type: 3}
+      propertyPath: Bala
+      value: 
+      objectReference: {fileID: 2089438220871376727, guid: 47fcb077394ef4a4a80a7312c3c5f946, type: 3}
+    - target: {fileID: 3763507813113226555, guid: 39a3eb4a0c226934db952cf3bbad82b6, type: 3}
+      propertyPath: actionpoint
+      value: 
+      objectReference: {fileID: 5468471183106241822}
     - target: {fileID: 4282523356946683820, guid: 39a3eb4a0c226934db952cf3bbad82b6, type: 3}
       propertyPath: m_Name
       value: gun
@@ -365,8 +373,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3072163403434635251, guid: 39a3eb4a0c226934db952cf3bbad82b6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a3eb4a0c226934db952cf3bbad82b6, type: 3}
 --- !u!1 &5468471183106241822 stripped
 GameObject:

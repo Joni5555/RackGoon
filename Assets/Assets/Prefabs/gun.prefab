@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 849943772495920665}
   - component: {fileID: 3072163403434635251}
   - component: {fileID: 542979760557912486}
+  - component: {fileID: 3763507813113226555}
   m_Layer: 0
   m_Name: gun
   m_TagString: Untagged
@@ -108,10 +109,10 @@ MonoBehaviour:
   Attacktimes: 0
   attackTMOUT: 0
   MouseACT1CLDWN: 0
-  MouseACT1SPRT: {fileID: 0}
+  MouseACT1SPRT: {fileID: 8911426123444694489}
   MouseACT1SPD: 0
   MouseACT2CLDWN: 0
-  MouseACT2SPRT: {fileID: 0}
+  MouseACT2SPRT: {fileID: 8911426123444694489}
   MouseACT2SPD: 0
 --- !u!61 &542979760557912486
 BoxCollider2D:
@@ -139,6 +140,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3763507813113226555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282523356946683820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6fc1228737600458b8bedabe0f133d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionpoint: {fileID: 8911426123444694489}
+  Bala: {fileID: 2089438220871376727, guid: 47fcb077394ef4a4a80a7312c3c5f946, type: 3}
 --- !u!1 &8911426123444694489
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8911426123444694489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.492, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
