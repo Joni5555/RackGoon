@@ -6,8 +6,10 @@ using UnityEngine;
 public class RotatingPlataform : MonoBehaviour
 {
     private float rotZ;
-    public float RotationSpeed;
-    public float Timer = 4.0f;
+    private float RotationSpeed = 0;
+    public float Speed; 
+    private float StopTimer = 0;
+    public float Timer;
 
 
     private bool isRotating;
@@ -15,8 +17,8 @@ public class RotatingPlataform : MonoBehaviour
     private void Start()
     {
         isRotating = true;
-        RotationSpeed = 100;
-        
+        RotationSpeed = Speed;
+        StopTimer = Timer;
     }
 
     void Update()
@@ -24,7 +26,7 @@ public class RotatingPlataform : MonoBehaviour
         rotZ += Time.deltaTime * RotationSpeed;
         transform.rotation = Quaternion.Euler(0,0, rotZ);
         
-        Timer -= Time.deltaTime;
+        StopTimer -= Time.deltaTime;
         
         if (isRotating)
         {
@@ -32,14 +34,14 @@ public class RotatingPlataform : MonoBehaviour
             {
                 isRotating = false;
                 RotationSpeed = 0;
-                Timer = 4.0f;
+                StopTimer = Timer;
             }   
         }
         else
         {
-            if (Timer <= 0)
+            if (StopTimer <= 0)
             {
-                RotationSpeed = 100;
+                RotationSpeed = Speed;
             }
             if (transform.rotation.z >= 0)
             {
