@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plataforma_cae : MonoBehaviour
+public class plataforma_cae : MonoBehaviour
 {
     public float fallDelay = 0.3f;
     public float shakeAmount = 5f;
@@ -33,6 +33,8 @@ public class Plataforma_cae : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             StartCoroutine(Falling(fallDelay));
+            //  rb.constraints = RigidbodyConstraints2D.None;
+            
         }
     }
 
@@ -40,8 +42,12 @@ public class Plataforma_cae : MonoBehaviour
     {
         originalPos = transform.position;
         yield return new WaitForSeconds(delay);
+     
 
         readyToShake = true;
         yield return new WaitForSeconds(1.0f);
+        rb.bodyType = RigidbodyType2D.Dynamic;
+      
+
     }
 }
