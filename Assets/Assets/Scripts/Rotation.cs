@@ -12,13 +12,13 @@ public class Rotation : MonoBehaviour
 
     public Vector2 mousepost;
     public float degrees;
-    public bool enable = true;
 
 
 
     [Header("Wepon caracteristics ")]
 
-    public int WPNDMG;
+    public int WPNDMGPRIM;
+    public int WPNDMGSECN;
 
     public Vector3 direction;
     public GameObject ACTNPoint;
@@ -34,10 +34,7 @@ public class Rotation : MonoBehaviour
     public GameObject MouseACT2SPRT;
     public float MouseACT2SPD;
 
-    [Header("custom caracteristics ")]
-    public bool isShword = false;
-    public bool enemyheld = false;
-    public bool desable;
+  
 
 
     private void FixedUpdate()
