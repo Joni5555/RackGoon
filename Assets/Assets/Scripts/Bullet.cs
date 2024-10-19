@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private new Rigidbody2D rigidbody;
+    Rigidbody m_Rigidbody;
+    public float speed = 20f;
+    public float lifeTime = 2f;
+
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody2D>();
+        // Destruir la bala después de 'lifeTime' segundos para limpiar la escena
+        m_Rigidbody = GetComponent<Rigidbody>();
+        Destroy(gameObject, lifeTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Destroy(gameObject);
+    }
+
+    void FixedUpdate()
+    {
+        rigidbody.MovePosition(transform.position + transform.right * speed * Time.fixedDeltaTime);
     }
 }
