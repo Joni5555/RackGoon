@@ -5,8 +5,8 @@ using UnityEngine;
 public class Zombie : MonoBehaviour
 {
     public int MoveSpeed;
-    public float MaxDist;
-    public float MinDist;
+    public float MaxDisJugador;
+    public float MinDistJugador;
     public Transform Player;
 
 
@@ -23,11 +23,11 @@ public class Zombie : MonoBehaviour
         float distancia =
             Vector3.Distance(EnemyPos, PlayerPos);
 
-        if (distancia >= MinDist && distancia <= MaxDist)
+        if (distancia >= MinDistJugador && distancia <= MaxDisJugador)
         {
-            Vector3 targetPos = new Vector3(Player.position.x, this.transform.position.y);
+            Vector3 targetPos = new Vector3(Player.position.x, this.transform.position.y,Player.position.z);
             transform.LookAt(targetPos);
-            transform.position += transform.forward *MoveSpeed*Time.deltaTime;
+            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         }
     }
 }
