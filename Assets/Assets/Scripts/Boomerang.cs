@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoomerangFollow : MonoBehaviour
+public class Boomerang : MonoBehaviour
 {
     public float speed = 5f; 
     public Transform player;  
