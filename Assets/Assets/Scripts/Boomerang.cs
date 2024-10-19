@@ -2,45 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boomerang : MonoBehaviour
+public class BoomerangFollow : MonoBehaviour
 {
-    public float speed = 10f;
-    public float returnTime = 2f;
-    public Transform player;
-    private Vector3 launchDirection;
-    private bool returning = false;
-    private float returnTimer = 0f;
+    public float speed = 5f; 
+    public Transform player;  
+    public float returnSpeed = 3f; 
+    private Vector3 initialPosition; 
+    private bool returning = false; 
 
     void Start()
     {
-        launchDirection = transform.forward;
+        initialPosition = transform.position; 
     }
 
     void Update()
     {
         if (returning)
         {
-            ReturnToPlayer();
+            ReturnToEnemy();
         }
         else
-            transform.position += launchDirection * speed * Time.deltaTime;
-
-        if (Vector3.Distance(transform.position, player.position) > 20f)
         {
-            returning = true;
-            returnTimer = 0f;
+            MoveTowardsPlayer();
         }
     }
 
-    void ReturnToPlayer()
+    void MoveTowardsPlayer()
     {
-        returnTimer += Time.deltaTime;
-        float t = returnTimer / returnTime;
-        transform.position = Vector3.Lerp(transform.position, player.position, t);
-
-        if (t >=  1f)
+        if (player != null)
         {
-        Destroy(gameObject);
+            Vector3 direction = (player.position - transform.position).normalized;
+            transform.position += direction * speed * Time.deltaTime;
+
+            if (Vector3.Distance(transform.position, player.position) < 0.5f)
+            {
+                returning = true;
+            }
+        }
+    }
+
+    void ReturnToEnemy()
+    {
+        Vector3 direction = (initialPosition - transform.position).normalized;
+        transform.position += direction * returnSpeed * Time.deltaTime;
+
+ 
+        if (Vector3.Distance(transform.position, initialPosition) < 0.1f)
+        {
+            Destroy(gameObject);
         }
     }
 }
